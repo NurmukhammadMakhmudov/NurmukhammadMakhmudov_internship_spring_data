@@ -1,15 +1,11 @@
 package com.example.nurmukhammad_internship_spring_data.controllers;
-import com.example.nurmukhammad_internship_spring_data.models.interns;
+
 import com.example.nurmukhammad_internship_spring_data.services.InternsServices;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/interlist")
@@ -21,13 +17,18 @@ public class internsController {
     }
 
 
-    @GetMapping("")
-    public String getAllRecords(Model model){
+    @GetMapping
+    public String getAllRecords(Model model) {
+        internsServices.getAllRecords().forEach((e) -> {
+            if (e.getHobby() == null)
+                e.setHobby("No Hobby Mentioned");
+        });
         model.addAttribute("internsServices", internsServices.getAllRecords());
         return "interns";
     }
+
     @GetMapping("/{id}")
-    public String findById(@PathVariable("id") Long id, Model model){
+    public String findById(@PathVariable("id") Long id, Model model) {
         model.addAttribute("byIDIntern", internsServices.findById(id));
         return "byIDInterns";
     }
