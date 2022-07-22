@@ -1,7 +1,6 @@
 package com.example.nurmukhammad_internship_spring_data.services;
 
 
-import com.example.nurmukhammad_internship_spring_data.models.employees;
 import com.example.nurmukhammad_internship_spring_data.models.interns;
 import com.example.nurmukhammad_internship_spring_data.repos.InternsRepository;
 import org.springframework.stereotype.Service;
