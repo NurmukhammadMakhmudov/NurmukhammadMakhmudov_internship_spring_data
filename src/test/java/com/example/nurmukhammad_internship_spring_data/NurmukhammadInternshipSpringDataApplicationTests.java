@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class NurmukhammadInternshipSpringDataApplicationTests {
     public static final Logger logger = LoggerFactory.getLogger(InternsServices.class);
 
-    public static DataSource dataSource(){
+    public DataSource dataSource(){
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
         ds.setUrl("jdbc:postgresql://localhost:5432/nurmukhammad_internship");
@@ -42,7 +42,7 @@ class NurmukhammadInternshipSpringDataApplicationTests {
     @Test
     public void contextLoads(){
         NurmukhammadInternshipSpringDataApplicationTests nurmukhammadInternshipSpringDataApplicationTests = new NurmukhammadInternshipSpringDataApplicationTests();
-        nurmukhammadInternshipSpringDataApplicationTests.DBTest(dataSource());
+        nurmukhammadInternshipSpringDataApplicationTests.DBTest(nurmukhammadInternshipSpringDataApplicationTests.dataSource());
     }
 
     public void DBTest(DataSource dataSource) {
