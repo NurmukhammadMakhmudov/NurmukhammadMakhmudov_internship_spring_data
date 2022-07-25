@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -29,8 +30,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class NurmukhammadInternshipSpringDataApplicationTests {
     public static final Logger logger = LoggerFactory.getLogger(InternsServices.class);
-
-    public DataSource dataSource(){
+    @Bean
+    public static DataSource dataSource(){
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
         ds.setUrl("jdbc:postgresql://localhost:5432/nurmukhammad_internship");
@@ -40,9 +41,9 @@ class NurmukhammadInternshipSpringDataApplicationTests {
     }
 
     @Test
-    public void contextLoads(){
+    public void contextLoads() {
         NurmukhammadInternshipSpringDataApplicationTests nurmukhammadInternshipSpringDataApplicationTests = new NurmukhammadInternshipSpringDataApplicationTests();
-        nurmukhammadInternshipSpringDataApplicationTests.DBTest(nurmukhammadInternshipSpringDataApplicationTests.dataSource());
+        nurmukhammadInternshipSpringDataApplicationTests.DBTest(dataSource());
     }
 
     public void DBTest(DataSource dataSource) {

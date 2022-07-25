@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,11 +13,11 @@ public class interns {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     String first_name, last_name, hobby;
-    Date date_of_birth;
+    LocalDate date_of_birth;
 
     public interns(){}
 
-    public interns(String first_name, String last_name, String hobby, Date date_of_birth){
+    public interns(String first_name, String last_name, String hobby, LocalDate date_of_birth){
         this.first_name = first_name;
         this.last_name = last_name;
         this.hobby = hobby;
@@ -47,11 +48,11 @@ public class interns {
         this.hobby = hobby;
     }
 
-    public Date getDate_of_birth() {
+    public LocalDate getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(Date date_of_birth) {
+    public void setDate_of_birth(LocalDate date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
