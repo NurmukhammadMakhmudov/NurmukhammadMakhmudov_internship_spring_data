@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create Intern</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+</head>
+<body>
+<form action="#" th:action="@{/interlist/intern-create}" th:object="${intern}" method="post">
+    <label for="first_name"> First Name</label>
+    <input type="text" th:field="*{first_name}" id="first_name" placeholder="First Name">
+    <label for="last_name"> Last Name</label>
+    <input type="text" th:field="*{last_name}" id="last_name" placeholder="Last Name">
+    <label for="date_of_birth"> Date of Birth</label>
+    <input type="text" th:field="*{date_of_birth}" id="date_of_birth" placeholder="date of birth">
+    <label for="hobby"> hobby</label>
+    <input type="text" th:field="*{hobby}" id="hobby" placeholder="hobby">
+    <br/>
+    <input type="submit" value="Create Intern">
+</form>
+
+</body>
+</html>

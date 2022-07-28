@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/tablestyle.css"/>
+    <title>Users Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div th:switch="${users}">
+    <h2 th:case="null"> No Users Records Available</h2>
+    <div th:case="*">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>role_id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>pass_word</th>
+                <th>isActive</th>
+            </tr>
+            <tr th:each="el : ${users} ">
+                <th th:text="${el.id}"></th>
+                <th th:text="${el.role_id}"></th>
+                <td th:text="${el.first_name}"></td>
+                <td th:text="${el.last_name}"></td>
+                <td th:text="${el.email}"></td>
+                <td th:text="${el.pass_word}"></td>
+                <td th:text="${el.isactive}"></td>
+                <td><a th:href="@{/userlist/user-update/{id}(id=${el.id})}">Edit</a></td>
+                <td><a th:href="@{userlist/user-delete/{id}(id=${el.id})}">Delete</a></td>
+            </tr>
+        </table>
+        <div><a th:href="@{userlist/user-create}">Create</a></div>
+    </div>
+</div>
+</body>
+</html>
+

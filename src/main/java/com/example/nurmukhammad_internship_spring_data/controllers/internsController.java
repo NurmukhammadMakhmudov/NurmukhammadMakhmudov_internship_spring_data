@@ -1,10 +1,13 @@
 package com.example.nurmukhammad_internship_spring_data.controllers;
 
+import com.example.nurmukhammad_internship_spring_data.models.Intern;
 import com.example.nurmukhammad_internship_spring_data.services.InternsServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class internsController {
     private final InternsServices internsServices;
 
+    @Autowired
     public internsController(InternsServices internsServices) {
         this.internsServices = internsServices;
     }
@@ -27,38 +31,42 @@ public class internsController {
         return "interns";
     }
 
-    @GetMapping("/{id}")
+
+    @GetMapping("/intern-create")
+    public String createInternForm(Intern intern, Model model) {
+
+        return "intern-create";
+    }
+
+    @PostMapping("/intern-create")
+    public String createIntern(Intern intern) {
+        internsServices.setIntern(intern);
+        return "redirect:/interlist";
+    }
+
+    @GetMapping("/intern-update/{id}")
+    public String updateInternForm(@PathVariable("id") Long id, Model model) {
+        Intern intern = internsServices.findById(id);
+        model.addAttribute("intern", intern);
+        return "intern-update";
+    }
+
+    @PostMapping("/intern-update")
+    public String updateIntern(Intern intern) {
+        internsServices.setIntern(intern);
+        return "redirect:/interlist";
+    }
+
+    @GetMapping("/byIDInterns/{id}")
     public String findById(@PathVariable("id") Long id, Model model) {
         model.addAttribute("byIDIntern", internsServices.findById(id));
         return "byIDInterns";
     }
 
-
-//    @GetMapping("")
-//    public ResponseEntity<List<interns>> getAllRecords(){
-//        List<interns> intern = internsServices.getAllRecords();
-//        return new ResponseEntity<>(intern, HttpStatus.OK);
-//    }
-//    @PostMapping("/add")
-//    public ResponseEntity<interns> setIntern(interns intern){
-//        interns newIntern = internsServices.setIntern(intern);
-//        return new ResponseEntity<>(newIntern,HttpStatus.CREATED);
-//    }
-//    @PutMapping("/update")
-//    public ResponseEntity<interns> updateIntern(interns intern){
-//        interns updatingIntern = internsServices.updateIntern(intern);
-//        return new ResponseEntity<>(updatingIntern, HttpStatus.OK);
-//    }
-//    @GetMapping("/{id}")
-//    public ResponseEntity<interns> findById(@PathVariable("id") Long id){
-//        interns intern = internsServices.findById(id);
-//        return new ResponseEntity<>(intern, HttpStatus.OK);
-//    }
-//    @DeleteMapping("/delete")
-//    public ResponseEntity<?> deleteById(Long id){
-//        internsServices.deleteById(id);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
-
+    @GetMapping("intern-delete/{id}")
+    public String deleteIntern(@PathVariable("id") Long id) {
+        internsServices.deleteById(id);
+        return "redirect:/interlist";
+    }
 
 }

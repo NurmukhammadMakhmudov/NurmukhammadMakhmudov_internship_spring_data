@@ -97,7 +97,7 @@ class TestEmployees {
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = internsController.class)
 
-class TestInterns {
+class TestIntern {
 
     @Autowired
     private MockMvc mockMvc;

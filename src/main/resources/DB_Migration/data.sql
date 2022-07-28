@@ -1,83 +1,77 @@
-insert into employees (id, first_name, last_name, position)
-values (1, 'Jilleen', 'Moehle', 'Office Assistant IV');
-insert into employees (id, first_name, last_name, position)
-values (2, 'Grayce', 'Klebes', 'Mechanical Systems Engineer');
-insert into employees (id, first_name, last_name, position)
-values (3, 'Sibyl', 'Fitzsimmons', 'Senior Editor');
-insert into employees (id, first_name, last_name, position)
-values (4, 'Tomlin', 'Van Dalen', 'Junior Executive');
-insert into employees (id, first_name, last_name, position)
-values (5, 'Benjamen', 'Preist', 'VP Quality Control');
-insert into employees (id, first_name, last_name, position)
-values (6, 'Nancie', 'Jales', 'Director of Sales');
-insert into employees (id, first_name, last_name, position)
-values (7, 'Deborah', 'Frammingham', 'Associate Professor');
-insert into employees (id, first_name, last_name, position)
-values (8, 'Chandal', 'Feely', 'Financial Analyst');
-insert into employees (id, first_name, last_name, position)
-values (9, 'Robinson', 'Parzis', 'Sales Representative');
-insert into employees (id, first_name, last_name, position)
-values (10, 'Maryjo', 'Isenor', 'Research Nurse');
-insert into employees (id, first_name, last_name, position)
-values (11, 'Helaine', 'Mills', 'Professor');
-insert into employees (id, first_name, last_name, position)
-values (12, 'Wini', 'Yuranovev', 'Quality Control Specialist');
-insert into employees (id, first_name, last_name, position)
-values (13, 'Hillier', 'McInnerny', 'GIS Technical Architect');
-insert into employees (id, first_name, last_name, position)
-values (14, 'Nelle', 'Hickinbottom', 'Senior Developer');
-insert into employees (id, first_name, last_name, position)
-values (15, 'Carleen', 'Medendorp', 'Technical Writer');
-insert into employees (id, first_name, last_name, position)
-values (16, 'Karel', 'Zute', 'Web Developer III');
-insert into employees (id, first_name, last_name, position)
-values (17, 'Skylar', 'Lichtfoth', 'Junior Executive');
-insert into employees (id, first_name, last_name, position)
-values (18, 'Jenny', 'Wyllcock', 'Nurse Practicioner');
-insert into employees (id, first_name, last_name, position)
-values (19, 'Urbano', 'Demcak', 'Information Systems Manager');
-insert into employees (id, first_name, last_name, position)
-values (20, 'Lynnette', 'Drever', 'Web Developer III');
+-- Employees Table
 
+insert into employees (id, first_name, last_name, position)
+values (1, 'Lise', 'Hevner', 'Dental Hygienist');
+insert into employees (id, first_name, last_name, position)
+values (2, 'Chancey', 'Ales0', 'Statistician II');
+insert into employees (id, first_name, last_name, position)
+values (3, 'Early', 'Rey', 'Web Designer II');
+insert into employees (id, first_name, last_name, position)
+values (4, 'Agnesse', 'Kennerknecht', 'Account Executive');
+insert into employees (id, first_name, last_name, position)
+values (5, 'Raffaello', 'Walczak', 'General Manager');
+insert into employees (id, first_name, last_name, position)
+values (6, 'Myrtie', 'Robertazzi', 'Payment Adjustment Coordinator');
+insert into employees (id, first_name, last_name, position)
+values (7, 'Jocelin', 'Bettaney', 'Programmer IV');
+insert into employees (id, first_name, last_name, position)
+values (8, 'Anne-corinne', 'Suggitt', 'Information Systems Manager');
+insert into employees (id, first_name, last_name, position)
+values (9, 'Caroljean', 'Aldgate', 'VP Sales');
+insert into employees (id, first_name, last_name, position)
+values (10, 'Osbourne', 'Pilgram', 'Geologist IV');
 
+-- Interns Table
 
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (1, 'Marylinda', 'Mapam', '12.04.2002', 'curae mauris');
+values (1, 'Karmen', 'Hoodspeth', '1997-04-28 04:32:17', 'convallis morbi');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (2, 'Ina', 'Vickerstaff', '12.04.2002', 'curae mauris');
+values (2, 'Torre', 'Leaburn', '1994-07-10 04:02:33', 'faucibus orci');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (3, 'Pip', 'McGaraghan', '03.02.1999', null);
+values (3, 'Christyna', 'Poter', '1991-12-29 00:00:39', 'nullam');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (4, 'Bethina', 'Canet', '03.02.1999', null);
+values (4, 'Aeriell', 'Alleyne', '1998-08-17 09:10:24', 'donec vitae');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (5, 'Cobbie', 'Strettle', '03.02.1999', null);
+values (5, 'Zelda', 'Lamburne', '1989-05-30 05:30:40', 'condimentum neque sapien');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (6, 'Josy', 'Pocklington', '03.02.1999', null);
+values (6, 'Chev', 'Aronin', '1998-10-17 06:42:28', 'felis fusce posuere');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (7, 'Alicia', 'Muschette', '03.02.1999', 'ultrices enim lorem ipsum dolor');
+values (7, 'Nariko', 'Inchboard', '1994-10-13 17:55:09', 'duis mattis egestas');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (8, 'Bealle', 'Checcucci', '03.02.1999', 'viverra pede ac diam');
+values (8, 'Lian', 'Kemetz', '1991-03-12 22:38:55', 'ante vel ipsum');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (9, 'Sergeant', 'Bythell', '03.02.1999', null);
+values (9, 'Trula', 'Atyeo', '1996-02-08 10:24:55', 'luctus ultricies eu');
 insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (10, 'Candida', 'Cator', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (11, 'Barret', 'Selly', '03.02.1999', 'neque sapien placerat ante');
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (12, 'Kip', 'Jedrzejkiewicz', '03.02.1999', 'arcu libero rutrum ac lobortis');
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (13, 'Earle', 'Izat', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (14, 'Shel', 'Farthing', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (15, 'Mathilde', 'Langstaff', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (16, 'Dyann', 'Danilishin', '03.02.1999', 'pede ullamcorper');
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (17, 'Dixie', 'Parman', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (18, 'Auberon', 'McMylor', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (19, 'Lily', 'Lightbowne', '03.02.1999', null);
-insert into interns (id, first_name, last_name, date_of_birth, hobby)
-values (20, 'Jacob', 'Hattigan', '03.02.1999', null);
+values (10, 'Aguie', 'Mattielli', '1989-12-04 15:01:44', 'pretium');
+
+-- Role Table
+
+insert into role (id, role, name)
+values (1, 'ADMIN', 'Администратор');
+insert into role (id, role, name)
+values (2, 'MANAGER', 'Менеджер');
+insert into role (id, role, name)
+values (3, 'MENTOR', 'Ментор');
+
+
+-- Users table
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (1, 2, 'Adaline', 'Da Costa', 'adacosta0@ihg.com', 'wimcw1k1', false);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (2, 2, 'Spike', 'Hancill', 'shancill1@flickr.com', 'x1EFmrvS9rel', false);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (3, 2, 'Colan', 'Wermerling', 'cwermerling2@istockphoto.com', 'fEc2yoSpRZ', true);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (4, 1, 'Elvin', 'Grayley', 'egrayley3@omniture.com', 'ebaQrMC', true);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (5, 2, 'Blinnie', 'Gerardot', 'bgerardot4@irs.gov', 'XUKB2b2A7t', false);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (6, 2, 'Robbyn', 'Souster', 'rsouster5@parallels.com', 'eHOBIgdqwFoc', true);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (7, 3, 'Grant', 'Greenmon', 'ggreenmon6@g.co', 'ibd4CfExNf', false);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (8, 1, 'Anderson', 'Mottram', 'amottram7@feedburner.com', 'rUkozBB', false);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (9, 3, 'Dorie', 'Huckell', 'dhuckell8@infoseek.co.jp', 'yKyYt8pRiqMJ', true);
+insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (10, 1, 'Sonja', 'Harry', 'sharry9@lycos.com', 'rko8DQvy2d', true);
