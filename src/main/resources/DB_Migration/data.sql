@@ -74,4 +74,4 @@ values (8, 1, 'Anderson', 'Mottram', 'amottram7@feedburner.com', 'rUkozBB', fals
 insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
 values (9, 3, 'Dorie', 'Huckell', 'dhuckell8@infoseek.co.jp', 'yKyYt8pRiqMJ', true);
 insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (10, 1, 'Sonja', 'Harry', 'sharry9@lycos.com', 'rko8DQvy2d', true);
+values (10, 1, 'Sonja', 'Harry', 'sharry9@lycos.com', '$2a$12$sO/MX0A8Fk6mhgl0Or7MYuRfNY1uCrrKbUBEHqFnxStAy//78qKgS', true);

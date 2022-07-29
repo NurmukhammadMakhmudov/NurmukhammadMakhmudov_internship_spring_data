@@ -39,8 +39,8 @@ create table users
     role_id    INT REFERENCES role (id),
     first_name VARCHAR(50)  NOT NULL,
     last_name  VARCHAR(50)  NOT NULL,
-    email      VARCHAR(150) NOT NULL,
-    pass_word  VARCHAR(50)  NOT NULL,
+    email      VARCHAR(255) NOT NULL,
+    pass_word  VARCHAR(255)  NOT NULL,
     isactive   BOOLEAN
 
 );
