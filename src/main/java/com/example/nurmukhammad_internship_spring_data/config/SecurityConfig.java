@@ -1,6 +1,6 @@
 package com.example.nurmukhammad_internship_spring_data.config;
 
-import com.example.nurmukhammad_internship_spring_data.services.RoleServices;
+import com.example.nurmukhammad_internship_spring_data.models.Permission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,22 +9,19 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private final RoleServices roleServices;
     private final UserDetailsService userDetailsService;
 
+
     @Autowired
-    public SecurityConfig(RoleServices roleServices, UserDetailsService userDetailsService) {
-        this.roleServices = roleServices;
+    public SecurityConfig(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
@@ -35,9 +32,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/userlist/**").hasRole(roleServices.getRole(0))
-                .antMatchers("/employeelist/**").hasRole(roleServices.getRole(1))
-                .antMatchers("/interlist/**").hasRole(roleServices.getRole(2))
+                .antMatchers("/userlist/**").hasAuthority(Permission.PERMISSION_ADMIN.getPermission())
+                .antMatchers("/employeelist/**").hasAuthority(Permission.PERMISSION_MANAGER.getPermission())
+                .antMatchers("/interlist/**").hasAuthority(Permission.PERMISSION_MENTOR.getPermission())
                 .anyRequest()
                 .authenticated()
                 .and()

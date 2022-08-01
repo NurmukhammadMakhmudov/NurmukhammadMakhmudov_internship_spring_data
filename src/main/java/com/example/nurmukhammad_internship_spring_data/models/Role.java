@@ -1,20 +1,46 @@
 package com.example.nurmukhammad_internship_spring_data.models;
 
 
-import lombok.Data;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import javax.persistence.*;
-import java.util.Set;
-import java.util.stream.Collectors;
 
-@Data
+
 @Entity
-@Table(name = "role")
+@Table(name = "roles")
 public class Role {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String role, name;
+    @Column(name = "role")
+    private String role;
+    @Column(name = "name")
+    private String name;
+    public Role() {}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }

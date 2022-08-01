@@ -7,26 +7,31 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 
 @Data
 public class SecurityUser implements UserDetails {
 
-    public SecurityUser(String username, String password, boolean isActive) {
+    public SecurityUser(String username, String password, boolean isActive, List<SimpleGrantedAuthority> authorities) {
         this.username = username;
         this.password = password;
         this.isActive = isActive;
+        this.authorities = authorities;
     }
     private final String username;
     private final String password;
     private final boolean isActive;
+    private final List<SimpleGrantedAuthority> authorities;
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+
+        return authorities;
+
     }
 
     @Override
@@ -54,18 +59,33 @@ public class SecurityUser implements UserDetails {
         return isActive;
     }
 
+
     @Override
     public boolean isEnabled() {
         return isActive;
     }
     public static UserDetails formUser(User user){
+        List<SimpleGrantedAuthority> list = new ArrayList<>();
+        if (user.getRole_id() == 1) {
+            list.add(new SimpleGrantedAuthority("ADMIN"));
+        }
+        else if (user.getRole_id() == 2){
+            list.add(new SimpleGrantedAuthority("MANAGER"));
+
+        }
+        else if (user.getRole_id() ==3) {
+            list.add(new SimpleGrantedAuthority("MENTOR"));
+        }
+
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPass_word(),
                 user.getIsactive(),
                 user.getIsactive(),
                 user.getIsactive(),
                 user.getIsactive(),
-                Arrays.asList(new SimpleGrantedAuthority("ADMIN"))
-        );
+                list
+
+                );
+
     }
 }

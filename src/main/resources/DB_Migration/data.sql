@@ -46,32 +46,34 @@ values (10, 'Aguie', 'Mattielli', '1989-12-04 15:01:44', 'pretium');
 
 -- Role Table
 
-insert into role (id, role, name)
+insert into roles (id, role, name)
 values (1, 'ADMIN', 'Администратор');
-insert into role (id, role, name)
+insert into roles (id, role, name)
 values (2, 'MANAGER', 'Менеджер');
-insert into role (id, role, name)
+insert into roles (id, role, name)
 values (3, 'MENTOR', 'Ментор');
 
 
 -- Users table
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (1, 1, 'Adaline', 'Da Costa', 'adacosta0@ihg.com', 'wimcw1k1', false);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (2, 2, 'Spike', 'Hancill', 'shancill1@flickr.com', 'x1EFmrvS9rel', false);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (3, 2, 'Colan', 'Wermerling', 'cwermerling2@istockphoto.com', 'fEc2yoSpRZ', true);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (4, 2, 'Elvin', 'Grayley', 'egrayley3@omniture.com', '$2a$12$1fza7ARFCnx.DtekHhExVOnZlHO5AIktSwVl6tRXWKqQm7bl2iBVq
+-- ', true);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (5, 2, 'Blinnie', 'Gerardot', 'bgerardot4@irs.gov', 'XUKB2b2A7t', false);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (6, 2, 'Robbyn', 'Souster', 'rsouster5@parallels.com', 'eHOBIgdqwFoc', true);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+-- values (7, 3, 'Grant', 'Greenmon', 'ggreenmon6@g.co', 'ibd4CfExNf', false);
+-- insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
+values (8, 2, 'Anderson', 'Mottram', 'amottram7@feedburner.com', '$2a$12$rQ.RWfJI4z.eVy/GTOmRmu7V7WaAeJrOwmENnCyB6d.tlcxiWeeG2
+', true);
 insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (1, 2, 'Adaline', 'Da Costa', 'adacosta0@ihg.com', 'wimcw1k1', false);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (2, 2, 'Spike', 'Hancill', 'shancill1@flickr.com', 'x1EFmrvS9rel', false);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (3, 2, 'Colan', 'Wermerling', 'cwermerling2@istockphoto.com', 'fEc2yoSpRZ', true);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (4, 1, 'Elvin', 'Grayley', 'egrayley3@omniture.com', 'ebaQrMC', true);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (5, 2, 'Blinnie', 'Gerardot', 'bgerardot4@irs.gov', 'XUKB2b2A7t', false);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (6, 2, 'Robbyn', 'Souster', 'rsouster5@parallels.com', 'eHOBIgdqwFoc', true);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (7, 3, 'Grant', 'Greenmon', 'ggreenmon6@g.co', 'ibd4CfExNf', false);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (8, 1, 'Anderson', 'Mottram', 'amottram7@feedburner.com', 'rUkozBB', false);
-insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
-values (9, 3, 'Dorie', 'Huckell', 'dhuckell8@infoseek.co.jp', 'yKyYt8pRiqMJ', true);
+values (9, 3, 'Dorie', 'Huckell', 'dhuckell8@infoseek.co.jp', '$2a$12$qGrWLEa1P3mH2aXFy5cvC.WJLEXF4POvk3Op/sLbWii8O3kVjmGSu', true);
 insert into users (id, role_id, first_name, last_name, email, pass_word, isActive)
 values (10, 1, 'Sonja', 'Harry', 'sharry9@lycos.com', '$2a$12$sO/MX0A8Fk6mhgl0Or7MYuRfNY1uCrrKbUBEHqFnxStAy//78qKgS', true);
