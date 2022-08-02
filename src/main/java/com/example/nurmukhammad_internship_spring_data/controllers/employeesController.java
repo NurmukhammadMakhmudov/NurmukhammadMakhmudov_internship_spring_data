@@ -1,7 +1,6 @@
 package com.example.nurmukhammad_internship_spring_data.controllers;
 
 import com.example.nurmukhammad_internship_spring_data.models.Employees;
-import com.example.nurmukhammad_internship_spring_data.models.Intern;
 import com.example.nurmukhammad_internship_spring_data.services.EmployeesServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +38,7 @@ public class employeesController {
 
     @GetMapping("/employee-create")
     public String createEmployeeForm(Employees employee, Model model) {
-        model.addAttribute("employee", employee);
+        employee.setId(employeesServices.getID());
         return "employee-create";
     }
 

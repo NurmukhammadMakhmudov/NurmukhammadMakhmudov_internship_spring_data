@@ -34,7 +34,7 @@ public class internsController {
 
     @GetMapping("/intern-create")
     public String createInternForm(Intern intern, Model model) {
-
+        intern.setId(internsServices.getID());
         return "intern-create";
     }
 

@@ -7,12 +7,21 @@
 </head>
 <body>
 <form action="#" th:action="@{/employeelist/employee-create}" th:object="${employee}" method="post">
-    <label for="first_name"> First Name</label>
-    <input type="text" th:field="*{first_name}" id="first_name" placeholder="First Name">
-    <label for="last_name"> Last Name</label>
-    <input type="text" th:field="*{last_name}" id="last_name" placeholder="Last Name">
-    <label for="position"> position</label>
-    <input type="text" th:field="*{position}" id="position" placeholder="position">
+    <div><label for="id"> ID</label>
+        <input  type="number"  th:field="*{id}"  id="id" placeholder="ID" >
+    </div>
+    <div>
+        <label for="first_name"> First Name</label>
+        <input type="text" th:field="*{first_name}" id="first_name" placeholder="First Name">
+    </div>
+    <div>
+        <label for="last_name"> Last Name</label>
+        <input type="text" th:field="*{last_name}" id="last_name" placeholder="Last Name">
+    </div>
+    <div>
+        <label for="position"> position</label>
+        <input type="text" th:field="*{position}" id="position" placeholder="position">
+    </div>
     <br/>
     <input type="submit" value="Create Employee">
 </form>

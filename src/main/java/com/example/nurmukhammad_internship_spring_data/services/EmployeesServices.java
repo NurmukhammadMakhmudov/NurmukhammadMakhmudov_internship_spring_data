@@ -26,6 +26,10 @@ public class EmployeesServices {
         employeesRepository.save(empl);
     }
 
+    public long getID() {
+        return  (employeesRepository.findAll().size() + 1);
+    }
+
     public Employees updateEmployee(Employees empl) {
         employeesRepository.findById(empl.getId()).orElseThrow(() -> new RuntimeException("User not Found"));
         return employeesRepository.save(empl);

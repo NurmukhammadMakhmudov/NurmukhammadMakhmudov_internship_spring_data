@@ -2,12 +2,14 @@ package com.example.nurmukhammad_internship_spring_data.security;
 
 
 import com.example.nurmukhammad_internship_spring_data.models.User;
+import com.example.nurmukhammad_internship_spring_data.services.RoleServices;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,12 +17,13 @@ import java.util.List;
 @Data
 public class SecurityUser implements UserDetails {
 
-    public SecurityUser(String username, String password, boolean isActive, List<SimpleGrantedAuthority> authorities) {
+    public SecurityUser(String username, String password, boolean isActive, List<SimpleGrantedAuthority> authorities, RoleServices roleServices) {
         this.username = username;
         this.password = password;
         this.isActive = isActive;
         this.authorities = authorities;
     }
+
     private final String username;
     private final String password;
     private final boolean isActive;
@@ -64,18 +67,13 @@ public class SecurityUser implements UserDetails {
     public boolean isEnabled() {
         return isActive;
     }
-    public static UserDetails formUser(User user){
-        List<SimpleGrantedAuthority> list = new ArrayList<>();
-        if (user.getRole_id() == 1) {
-            list.add(new SimpleGrantedAuthority("ADMIN"));
-        }
-        else if (user.getRole_id() == 2){
-            list.add(new SimpleGrantedAuthority("MANAGER"));
 
-        }
-        else if (user.getRole_id() ==3) {
-            list.add(new SimpleGrantedAuthority("MENTOR"));
-        }
+    protected static PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(12);
+    }
+
+    public static UserDetails formUser(User user, RoleServices roleServices) {
+
 
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPass_word(),
@@ -83,9 +81,9 @@ public class SecurityUser implements UserDetails {
                 user.getIsactive(),
                 user.getIsactive(),
                 user.getIsactive(),
-                list
+                List.of(new SimpleGrantedAuthority(roleServices.getRole((user.getRole_id() - 1))))
 
-                );
+        );
 
     }
 }

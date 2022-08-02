@@ -14,7 +14,9 @@ public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    String first_name, last_name, position;
+    String first_name;
+    String last_name;
+    String position;
 
 
 }

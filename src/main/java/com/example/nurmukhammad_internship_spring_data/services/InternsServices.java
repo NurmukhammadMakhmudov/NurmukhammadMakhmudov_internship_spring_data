@@ -25,6 +25,10 @@ public class InternsServices {
         internsRepository.save(intern);
     }
 
+    public long getID() {
+        return (internsRepository.findAll().size() + 1);
+    }
+
     public Intern updateIntern(Intern intern) {
         internsRepository.findById(intern.getId()).orElseThrow(() -> new RuntimeException("User not Found"));
         return internsRepository.save(intern);

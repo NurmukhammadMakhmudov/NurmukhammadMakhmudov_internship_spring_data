@@ -4,6 +4,7 @@ package com.example.nurmukhammad_internship_spring_data.controllers;
 import com.example.nurmukhammad_internship_spring_data.models.User;
 import com.example.nurmukhammad_internship_spring_data.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +18,12 @@ import java.util.List;
 @RequestMapping("/userlist")
 public class usersController {
     private final UserService usersServices;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public usersController(UserService usersServices) {
+    public usersController(UserService usersServices, PasswordEncoder passwordEncoder) {
         this.usersServices = usersServices;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping
@@ -31,12 +34,14 @@ public class usersController {
     }
 
     @GetMapping("/user-create")
-    public String createUserForm(User user) {
+    public String createUserForm(User user, Model model) {
+        user.setId(usersServices.getID());
         return "user-create";
     }
 
     @PostMapping("/user-create")
     public String createUser(User user) {
+        user.setPass_word(passwordEncoder.encode(user.getPass_word()));
         usersServices.saveUser(user);
         return "redirect:/userlist";
     }
@@ -50,6 +55,7 @@ public class usersController {
 
     @GetMapping("/user-update/{id}")
     public String updateUserForm(@PathVariable("id") Long id, Model model) {
+
         User user = usersServices.findById(id);
         model.addAttribute("user", user);
         return "user-update";
