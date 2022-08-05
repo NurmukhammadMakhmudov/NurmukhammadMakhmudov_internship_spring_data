@@ -9,12 +9,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -123,13 +121,7 @@ class TestIntern {
 
 }
 
-@DataJpaTest
-@Component
-
-class SomeComponent {
-    private InternsServices internsServices;
-
+class JWTTests {
 
 
 }
-
