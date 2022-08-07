@@ -1,4 +1,4 @@
-package com.example.nurmukhammad_internship_spring_data.rest;
+package com.example.nurmukhammad_internship_spring_data.rest.dto;
 
 
 import lombok.Data;

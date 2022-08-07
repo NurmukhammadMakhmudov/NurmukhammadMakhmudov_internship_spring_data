@@ -18,6 +18,10 @@ public class InternsServices {
     }
 
     public List<Intern> getAllRecords() {
+        internsRepository.findAll().forEach((e) -> {
+            if (e.getHobby() == null)
+                e.setHobby("No Hobby Mentioned");
+        });
         return internsRepository.findAll();
     }
 

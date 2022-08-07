@@ -30,7 +30,6 @@ public class JwTokenFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) {
         String token = jwTokenProvider.resolveToken((HttpServletRequest) servletRequest);
-
         try {
             if (token != null && jwTokenProvider.validateToken(token)){
                 Authentication authentication = jwTokenProvider.getAuthentication(token);

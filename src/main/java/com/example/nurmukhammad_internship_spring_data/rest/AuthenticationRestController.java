@@ -2,6 +2,7 @@ package com.example.nurmukhammad_internship_spring_data.rest;
 
 import com.example.nurmukhammad_internship_spring_data.models.User;
 import com.example.nurmukhammad_internship_spring_data.repos.UserRepository;
+import com.example.nurmukhammad_internship_spring_data.rest.dto.AuthenticationRequestDTO;
 import com.example.nurmukhammad_internship_spring_data.security.JwTokenProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +11,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
