@@ -12,6 +12,7 @@ import java.util.List;
 public class InternsServices {
     private final InternsRepository internsRepository;
 
+
     @Autowired
     public InternsServices(InternsRepository internsRepository) {
         this.internsRepository = internsRepository;

@@ -24,5 +24,11 @@ public class User {
     @JoinColumn(name = "role_id", referencedColumnName = "id", updatable = false, insertable = false)
 
     private Role roles;
+
+    public String getRole(){
+       return roles.getRole();
+    }
 }
+
+
 

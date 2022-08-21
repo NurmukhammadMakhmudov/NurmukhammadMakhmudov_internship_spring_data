@@ -2,7 +2,6 @@ package com.example.nurmukhammad_internship_spring_data.security;
 
 
 import com.example.nurmukhammad_internship_spring_data.models.User;
-import com.example.nurmukhammad_internship_spring_data.services.RoleServices;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +16,7 @@ import java.util.List;
 @Data
 public class SecurityUser implements UserDetails {
 
-    public SecurityUser(String username, String password, boolean isActive, List<SimpleGrantedAuthority> authorities, RoleServices roleServices) {
+    public SecurityUser(String username, String password, boolean isActive, List<SimpleGrantedAuthority> authorities) {
         this.username = username;
         this.password = password;
         this.isActive = isActive;
@@ -72,8 +71,7 @@ public class SecurityUser implements UserDetails {
         return new BCryptPasswordEncoder(12);
     }
 
-    public static UserDetails formUser(User user, RoleServices roleServices) {
-
+    public static UserDetails formUser(User user) {
 
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPass_word(),
@@ -81,7 +79,7 @@ public class SecurityUser implements UserDetails {
                 user.getIsactive(),
                 user.getIsactive(),
                 user.getIsactive(),
-                List.of(new SimpleGrantedAuthority(roleServices.getRole((user.getRole_id() - 1))))
+                List.of(new SimpleGrantedAuthority(user.getRole()))
 
         );
 
