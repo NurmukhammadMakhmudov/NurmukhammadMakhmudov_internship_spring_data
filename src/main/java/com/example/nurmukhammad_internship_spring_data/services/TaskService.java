@@ -14,7 +14,6 @@ public class TaskService {
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
-//    public List<Task> findTasksFor()
 
     public  void addTask(Task task){
             taskRepository.save(task);

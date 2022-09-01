@@ -7,6 +7,7 @@ import com.example.nurmukhammad_internship_spring_data.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@PreAuthorize("hasRole('MANAGER')")
 public class EmployeeRestController {
 
     private final EmployeesServices employeesServices;
@@ -29,13 +31,13 @@ public class EmployeeRestController {
     }
 
     @GetMapping("employees")
-    @PreAuthorize("hasAuthority('MANAGER')")
+    @Secured("MANAGER")
     public ResponseEntity<List<Employees>> employees() {
         return ResponseEntity.ok().body( employeesServices.getAllRecords());
     }
 
     @PostMapping("employees/{id}")
-    @PreAuthorize("hasAuthority('MANAGER')")
+    @PreAuthorize("hasRole('MANAGER')")
     public void deleteUser(@PathVariable("id") Long id) {
         employeesServices.deleteById(id);
 

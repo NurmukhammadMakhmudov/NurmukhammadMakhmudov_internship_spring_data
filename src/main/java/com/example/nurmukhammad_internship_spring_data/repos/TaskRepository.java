@@ -15,6 +15,5 @@ public interface TaskRepository extends MongoRepository<Task, String> {
     @Query(value = "{user_created_task_id: '?0'}")
     List<Task> findByUser_created_task_id(String user_created_task_id);
 
-    List<Task> findByTask_descriptionBetween(String st, String end);
 
 }

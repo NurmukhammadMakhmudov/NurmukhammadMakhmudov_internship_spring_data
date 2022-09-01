@@ -6,6 +6,7 @@ import com.example.nurmukhammad_internship_spring_data.services.InternsServices;
 import com.example.nurmukhammad_internship_spring_data.services.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@PreAuthorize("hasRole('MENTOR')")
 public class InternsRestController {
 
     private final InternsServices internsServices;

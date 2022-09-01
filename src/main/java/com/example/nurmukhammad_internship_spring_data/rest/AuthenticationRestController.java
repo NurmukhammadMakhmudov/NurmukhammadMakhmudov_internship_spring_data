@@ -44,16 +44,6 @@ public class AuthenticationRestController {
 
     @PostMapping("/login")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequestDTO requestDTO ) {
-//        Task task = new Task(
-//                "12",
-//                "1",
-//                "dodo",
-//                LocalDateTime.now()
-//        );
-//        mongoTemplate.insert(task);
-//        mongoDBPOperations.saveTask(task);
-//        mongoDBPOperations.searchTask(1);
-
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestDTO.getUsername(),requestDTO.getPassword()));
